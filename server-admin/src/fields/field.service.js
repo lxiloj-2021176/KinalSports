@@ -36,9 +36,10 @@ export const createFieldRecord = async ({ fieldData, file }) => {
   const data = { ...fieldData };
 
   if (file) {
-    data.photo = file.path; // Guardar la ruta relativa del archivo subido
+    // Guardar SOLO el public_id
+    data.photo = `kinal_sports_in6am/fields/${file.filename}`;
   } else {
-    data.photo = 'kinal_sports_in6am/fields/kinal_sports_rljcha';
+    data.photo = 'kinal_sports_in6am/fields/j9fr1ebmfxw1to7llzpy';
   }
 
   const field = new Field(data);
@@ -54,19 +55,15 @@ export const updateFieldRecord = async ({ id, updateData, file }) => {
 
     if (currentField && currentField.photo) {
       try {
-        const url = currentField.photo;
-        const parts = url.split('/');
-        const fileNameWithExt = parts[parts.length - 1]; 
-        
-        // Hacemos la ruta dinámica basándonos en el .env
-        const folder = process.env.CLOUDINARY_FOLDER || 'kinal_sports_in6am/fields';
-        const publicId = `${folder}/${fileNameWithExt.split('.')[0]}`; 
-        await cloudinary.uploader.destroy(publicId);
+        // Ahora photo ya es public_id directamente
+        await cloudinary.uploader.destroy(currentField.photo);
       } catch (deleteError) {
         console.error(`Error al eliminar imagen anterior: ${deleteError.message}`);
       }
     }
-    data.photo = file.path;
+
+    // Guardar nuevo public_id
+    data.photo = `kinal_sports_in6am/fields/${file.filename}`;
   }
 
   return Field.findByIdAndUpdate(id, data, { new: true, runValidators: true });

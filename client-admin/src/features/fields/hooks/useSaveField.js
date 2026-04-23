@@ -4,7 +4,7 @@ export const useSaveField = () => {
     const createField = useFieldsStore((state) => state.createField);
     const updateField = useFieldsStore((state) => state.updateField);
 
-    const saveField = async (data, id) => { 
+    const saveField = async (data, id = null) => { 
         const formData = new FormData();
 
         formData.append("fieldName", data.fieldName);
