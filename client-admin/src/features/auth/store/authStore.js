@@ -1,8 +1,11 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { login as loginRequest } from "../../../shared/apis";
+import {
+  login as loginRequest,
+  register as registerRequest,
+ } from "../../../shared/apis";
 import { showError } from "../../../shared/utils/toast.js";
-
+ 
 export const useAuthStore = create(
   persist((set, get) => ({
     user: null,
@@ -18,7 +21,7 @@ export const useAuthStore = create(
       const token = get().token;
       const role = get().user?.role;
       const isAdmin = role === "ADMIN_ROLE";
-
+ 
       if (token && !isAdmin) {
         set({
           user: null,
@@ -31,7 +34,7 @@ export const useAuthStore = create(
         });
         return;
       }
-
+ 
       set({
         isLoadingAuth: false,
         isAuthenticated: Boolean(token) && isAdmin,
@@ -51,14 +54,14 @@ export const useAuthStore = create(
     login: async ({emailOrUsername, password}) =>{
         try{
             set({loading: true, error: null});
-
+ 
             const { data } = await loginRequest({ emailOrUsername, password });
             console.log(data)
-
+ 
             const role = data?.userDetails?.role;
             if(role !== "ADMIN_ROLE"){
                 const message = "No tienes permiso para acceder a esta aplicación";
-
+ 
                 set({
                     user: null,
                     token: null,
@@ -68,11 +71,11 @@ export const useAuthStore = create(
                     isAuthenticated: false,
                     error: message,
                 });
-
+ 
                 showError(message);
                 return { success: false, error: message };
             }
-
+ 
             set({
                 user: data.userDetails,
                 //token: data.accessToken,
@@ -90,7 +93,26 @@ export const useAuthStore = create(
             return {success: false, error: message}
         }
         },
+ 
+        register: async (formData) => {
+          try{
+            set({ loading: true, error: null })
+            const { data } = await registerRequest(formData);
+            set({ loading: false})
+            return{
+              success: true,
+              emailVerificationRequired: data?.emailVerificationRequired,
+              data
+            }
+          }catch(err){
+            const message =
+              err.response?.data?.message || "Error al ergistrar usuario";
+            set({error: message, loading: false});
+            return {success: false, error: message}
+        }
+      }
     }),
   {name: "auth-KS-IN6AM"},
   ),
 );
+ 

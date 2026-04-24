@@ -37,9 +37,9 @@ const fieldSchema = new Schema(
       maxLength: [500, 'La descripción no puede exceder 500 caracteres'],
     },
     photo: {
-      type: String,
-      default: 'kinal_sports_in6am/fields/j9fr1ebmfxw1to7llzpy',
-    },
+    type: String,
+    default: 'https://res.cloudinary.com/dpdpiqtmu/image/upload/v1771004662/kinal_sports_in6am/fields/rv4tamf7fr3d5z9mz8v7.jpg',
+  },
     isActive: {
       type: Boolean,
       default: true,
