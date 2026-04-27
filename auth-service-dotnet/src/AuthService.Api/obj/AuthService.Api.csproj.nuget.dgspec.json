@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\IN6AM2\\KinalSports\\auth-service-dotnet\\src\\AuthService.Api\\AuthService.Api.csproj": {}
+    "C:\\IN6AM2\\KinalSports\\auth-service-dotnet\\src\\authservice.api\\AuthService.Api.csproj": {}
   },
   "projects": {
-    "C:\\IN6AM2\\KinalSports\\auth-service-dotnet\\src\\AuthService.Api\\AuthService.Api.csproj": {
+    "C:\\IN6AM2\\KinalSports\\auth-service-dotnet\\src\\authservice.api\\AuthService.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\IN6AM2\\KinalSports\\auth-service-dotnet\\src\\AuthService.Api\\AuthService.Api.csproj",
+        "projectUniqueName": "C:\\IN6AM2\\KinalSports\\auth-service-dotnet\\src\\authservice.api\\AuthService.Api.csproj",
         "projectName": "AuthService.Api",
-        "projectPath": "C:\\IN6AM2\\KinalSports\\auth-service-dotnet\\src\\AuthService.Api\\AuthService.Api.csproj",
+        "projectPath": "C:\\IN6AM2\\KinalSports\\auth-service-dotnet\\src\\authservice.api\\AuthService.Api.csproj",
         "packagesPath": "C:\\Users\\Informatica\\.nuget\\packages\\",
-        "outputPath": "C:\\IN6AM2\\KinalSports\\auth-service-dotnet\\src\\AuthService.Api\\obj\\",
+        "outputPath": "C:\\IN6AM2\\KinalSports\\auth-service-dotnet\\src\\authservice.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Informatica\\AppData\\Roaming\\NuGet\\NuGet.Config"

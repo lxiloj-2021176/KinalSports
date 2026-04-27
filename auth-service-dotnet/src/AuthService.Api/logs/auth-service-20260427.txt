@@ -211,3 +211,12 @@ AuthService.Application.Exceptions.BusinessException: Username already exists
 [2026-04-27 08:52:14 INF] HTTP GET /api/v1/auth/users responded 429 in 0.1328 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000008","ConnectionId":"0HNL4C5QNKDTU"}
 [2026-04-27 08:52:20 INF] HTTP GET /api/v1/auth/users responded 429 in 0.0926 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000009","ConnectionId":"0HNL4C5QNKDTU"}
 [2026-04-27 08:52:33 INF] HTTP GET /api/v1/auth/users responded 429 in 0.1107 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:0000000A","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 10:47:56 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-27 10:47:56 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-27 10:47:57 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-27 10:47:57 INF] AuthService API is running at http://localhost:5001. Health endpoint: http://localhost:5001/health {"SourceContext":"Program"}
+[2026-04-27 10:52:29 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 3.2766 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4FLFAIR4F:00000001","ConnectionId":"0HNL4FLFAIR4F"}
+[2026-04-27 10:52:30 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"207601ba-cbb6-41cd-a29b-a2e2ae5a7dd5","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL4FLFAIR4F:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL4FLFAIR4F"}
+[2026-04-27 10:52:30 INF] HTTP POST /api/v1/auth/login responded 200 in 881.2737 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4FLFAIR4F:00000002","ConnectionId":"0HNL4FLFAIR4F"}
+[2026-04-27 10:52:31 INF] HTTP OPTIONS /api/v1/auth/users responded 204 in 0.3109 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4FLFAIR4F:00000003","ConnectionId":"0HNL4FLFAIR4F"}
+[2026-04-27 10:52:31 INF] HTTP GET /api/v1/auth/users responded 200 in 107.3007 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4FLFAIR4F:00000004","ConnectionId":"0HNL4FLFAIR4F"}
