@@ -1,0 +1,213 @@
+[2026-04-27 07:31:22 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-27 07:31:22 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-27 07:31:22 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-27 07:31:22 INF] AuthService API is running at http://localhost:5001. Health endpoint: http://localhost:5001/health {"SourceContext":"Program"}
+[2026-04-27 07:32:42 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 2.2169 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTO:00000001","ConnectionId":"0HNL4C5QNKDTO"}
+[2026-04-27 07:32:42 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"350cc4a3-22f9-478c-bb78-4225fa9d2fbd","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL4C5QNKDTO:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL4C5QNKDTO"}
+[2026-04-27 07:32:42 INF] HTTP POST /api/v1/auth/login responded 200 in 555.3424 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTO:00000002","ConnectionId":"0HNL4C5QNKDTO"}
+[2026-04-27 07:32:43 INF] HTTP GET /api/v1/auth/users responded 401 in 3.6354 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTO:00000003","ConnectionId":"0HNL4C5QNKDTO"}
+[2026-04-27 07:32:43 INF] HTTP OPTIONS /api/v1/auth/refresh responded 204 in 0.0657 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTO:00000004","ConnectionId":"0HNL4C5QNKDTO"}
+[2026-04-27 07:32:43 INF] HTTP POST /api/v1/auth/refresh responded 200 in 60.4392 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTO:00000005","ConnectionId":"0HNL4C5QNKDTO"}
+[2026-04-27 07:32:43 INF] HTTP OPTIONS /api/v1/auth/users responded 204 in 0.0324 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTO:00000006","ConnectionId":"0HNL4C5QNKDTO"}
+[2026-04-27 07:32:43 INF] HTTP GET /api/v1/auth/users responded 200 in 42.2838 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTO:00000007","ConnectionId":"0HNL4C5QNKDTO"}
+[2026-04-27 08:37:41 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 0.1746 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:00000001","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:37:41 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"350cc4a3-22f9-478c-bb78-4225fa9d2fbd","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL4C5QNKDTP:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:37:41 INF] HTTP POST /api/v1/auth/login responded 200 in 281.8395 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:00000002","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:37:43 INF] HTTP GET /api/v1/auth/users responded 401 in 1.2041 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:00000003","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:37:43 INF] HTTP OPTIONS /api/v1/auth/refresh responded 204 in 0.0314 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:00000004","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:37:43 INF] HTTP POST /api/v1/auth/refresh responded 200 in 8.0292 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:00000005","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:37:43 INF] HTTP OPTIONS /api/v1/auth/users responded 204 in 0.0392 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:00000006","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:37:43 INF] HTTP GET /api/v1/auth/users responded 200 in 3.3908 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:00000007","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:38:36 INF] HTTP GET /api/v1/auth/users responded 200 in 3.8202 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:00000008","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:39:59 INF] HTTP OPTIONS /api/v1/auth/register responded 204 in 0.1052 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:00000009","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:40:00 INF] User suprapato registered successfully {"EventId":{"Id":1001,"Name":"LogUserRegistered"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTP:0000000A","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:40:00 INF] HTTP POST /api/v1/auth/register responded 201 in 1303.7832 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:0000000A","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:40:00 INF] HTTP GET /api/v1/auth/users responded 200 in 3.1521 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTP:0000000B","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:40:00 ERR] Failed executing DbCommand (4ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?', @p5='?', @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?' (DbType = DateTime), @p11='?', @p12='?', @p13='?', @p14='?' (DbType = DateTime), @p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?', @p21='?' (DbType = DateTime), @p22='?', @p23='?' (DbType = DateTime), @p24='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (id, created_at, email, name, password, surname, updated_at, username)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING status;
+INSERT INTO user_emails (id, email_verification_token, email_verification_token_expiry, user_id)
+VALUES (@p8, @p9, @p10, @p11)
+RETURNING email_verified;
+INSERT INTO user_password_resets (id, password_reset_token, password_reset_token_expiry, user_id)
+VALUES (@p12, @p13, @p14, @p15);
+INSERT INTO user_profiles (id, phone, profile_picture, user_id)
+VALUES (@p16, @p17, @p18, @p19);
+INSERT INTO user_roles (id, created_at, role_id, updated_at, user_id)
+VALUES (@p20, @p21, @p22, @p23, @p24); {"EventId":{"Id":20102,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTQ:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTQ"}
+[2026-04-27 08:40:00 ERR] An exception occurred in the database while saving changes for context type 'AuthService.Persistence.Data.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "ix_users_email"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "ix_users_email"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: users
+    ConstraintName: ix_users_email
+    File: nbtinsert.c
+    Line: 649
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken) {"EventId":{"Id":10000,"Name":"Microsoft.EntityFrameworkCore.Update.SaveChangesFailed"},"SourceContext":"Microsoft.EntityFrameworkCore.Update","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTQ:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTQ"}
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "ix_users_email"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "ix_users_email"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: users
+    ConstraintName: ix_users_email
+    File: nbtinsert.c
+    Line: 649
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+[2026-04-27 08:40:00 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNL4C5QNKDTQ:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTQ"}
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "ix_users_email"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "ix_users_email"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: users
+    ConstraintName: ix_users_email
+    File: nbtinsert.c
+    Line: 649
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AuthService.Persistence.Repositories.UserRepository.CreateAsync(User user) in C:\IN6AM\KinalSports\auth-service-dotnet\src\AuthService.Persistence\Repositories\UserRepository.cs:line 84
+   at AuthService.Application.Services.AuthService.RegisterAsync(RegisterDto registerDto) in C:\IN6AM\KinalSports\auth-service-dotnet\src\AuthService.Application\Services\AuthService.cs:line 131
+   at AuthService.Api.Controllers.AuthController.Register(RegisterDto registerDto) in C:\IN6AM\KinalSports\auth-service-dotnet\src\authservice.api\Controllers\AuthController.cs:line 108
+   at lambda_method763(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\IN6AM\KinalSports\auth-service-dotnet\src\authservice.api\Middlewares\GlobalExceptionMiddleware.cs:line 18
+[2026-04-27 08:40:00 ERR] HTTP POST /api/v1/auth/register responded 500 in 1115.2101 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTQ:00000001","ConnectionId":"0HNL4C5QNKDTQ"}
+[2026-04-27 08:40:02 INF] Email sent successfully {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTP:0000000A","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:40:02 INF] Email pipeline completed {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTP:0000000A","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:40:02 INF] Email processed {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTP:0000000A","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:40:02 INF] Verification email sent {"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTP:0000000A","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTP"}
+[2026-04-27 08:40:04 INF] HTTP GET /api/v1/auth/users responded 200 in 3.7417 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTQ:00000002","ConnectionId":"0HNL4C5QNKDTQ"}
+[2026-04-27 08:40:05 INF] HTTP GET /api/v1/auth/users responded 200 in 4.2945 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTQ:00000003","ConnectionId":"0HNL4C5QNKDTQ"}
+[2026-04-27 08:49:20 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 0.2680 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTR:00000001","ConnectionId":"0HNL4C5QNKDTR"}
+[2026-04-27 08:49:20 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"350cc4a3-22f9-478c-bb78-4225fa9d2fbd","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL4C5QNKDTR:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL4C5QNKDTR"}
+[2026-04-27 08:49:20 INF] HTTP POST /api/v1/auth/login responded 200 in 58.5000 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTR:00000002","ConnectionId":"0HNL4C5QNKDTR"}
+[2026-04-27 08:49:21 INF] HTTP GET /api/v1/auth/users responded 401 in 0.1767 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTR:00000003","ConnectionId":"0HNL4C5QNKDTR"}
+[2026-04-27 08:49:21 INF] HTTP OPTIONS /api/v1/auth/refresh responded 204 in 0.0339 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTR:00000004","ConnectionId":"0HNL4C5QNKDTR"}
+[2026-04-27 08:49:21 INF] HTTP POST /api/v1/auth/refresh responded 200 in 7.0574 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTR:00000005","ConnectionId":"0HNL4C5QNKDTR"}
+[2026-04-27 08:49:21 INF] HTTP OPTIONS /api/v1/auth/users responded 204 in 0.0290 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTR:00000006","ConnectionId":"0HNL4C5QNKDTR"}
+[2026-04-27 08:49:21 INF] HTTP GET /api/v1/auth/users responded 200 in 2.3753 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTR:00000007","ConnectionId":"0HNL4C5QNKDTR"}
+[2026-04-27 08:49:30 INF] HTTP GET /api/v1/auth/users responded 401 in 0.3001 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTS:00000001","ConnectionId":"0HNL4C5QNKDTS"}
+[2026-04-27 08:51:44 INF] HTTP OPTIONS /api/v1/auth/register responded 204 in 0.0578 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000001","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:51:44 WRN] Registration rejected: username already exists {"EventId":{"Id":1005,"Name":"LogRegistrationWithExistingUsername"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTU:00000002","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:51:44 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNL4C5QNKDTU:00000002","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTU"}
+AuthService.Application.Exceptions.BusinessException: Username already exists
+   at AuthService.Application.Services.AuthService.RegisterAsync(RegisterDto registerDto) in C:\IN6AM\KinalSports\auth-service-dotnet\src\AuthService.Application\Services\AuthService.cs:line 42
+   at AuthService.Api.Controllers.AuthController.Register(RegisterDto registerDto) in C:\IN6AM\KinalSports\auth-service-dotnet\src\authservice.api\Controllers\AuthController.cs:line 108
+   at lambda_method763(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\IN6AM\KinalSports\auth-service-dotnet\src\authservice.api\Middlewares\GlobalExceptionMiddleware.cs:line 18
+[2026-04-27 08:51:44 INF] HTTP POST /api/v1/auth/register responded 400 in 12.6808 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000002","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:51:52 INF] User xicabro registered successfully {"EventId":{"Id":1001,"Name":"LogUserRegistered"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTU:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:51:52 INF] HTTP POST /api/v1/auth/register responded 201 in 715.5034 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000003","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:51:52 INF] HTTP GET /api/v1/auth/users responded 200 in 3.1441 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000004","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:51:54 INF] Email sent successfully {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTU:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:51:54 INF] Email pipeline completed {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTU:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:51:54 INF] Email processed {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTU:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:51:54 INF] Verification email sent {"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"5cbc3bf6-bb9f-408a-b04e-687fd65a366a","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL4C5QNKDTU:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:52:07 INF] HTTP GET /api/v1/auth/users responded 200 in 3.0092 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000005","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:52:09 INF] HTTP GET /api/v1/auth/users responded 200 in 3.4766 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000006","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:52:13 INF] HTTP GET /api/v1/auth/users responded 429 in 0.6191 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000007","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:52:14 INF] HTTP GET /api/v1/auth/users responded 429 in 0.1328 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000008","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:52:20 INF] HTTP GET /api/v1/auth/users responded 429 in 0.0926 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:00000009","ConnectionId":"0HNL4C5QNKDTU"}
+[2026-04-27 08:52:33 INF] HTTP GET /api/v1/auth/users responded 429 in 0.1107 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL4C5QNKDTU:0000000A","ConnectionId":"0HNL4C5QNKDTU"}
