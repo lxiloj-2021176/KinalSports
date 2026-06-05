@@ -29,8 +29,8 @@ export const AppRoutes = () => {
       >
         <Route path='fields' element={<Fields />} />
         <Route path='teams' element={<Teams />} />
-        <Route path='tournaments' element={<Tournaments />} />
         <Route path='reservations' element={<Reservations />} />
+        <Route path='tournaments' element={<Tournaments />} />
         <Route path='users' element={<Users />} />
       </Route>
     </Routes>
