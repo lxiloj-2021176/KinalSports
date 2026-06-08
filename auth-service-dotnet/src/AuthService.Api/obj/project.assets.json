@@ -7577,7 +7577,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Informatica\\.nuget\\packages\\": {}
+    "C:\\Users\\xsbra\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7585,11 +7585,11 @@
       "projectUniqueName": "C:\\IN6AM KINAL SPORTS\\KinalSports\\auth-service-dotnet\\src\\AuthService.Api\\AuthService.Api.csproj",
       "projectName": "AuthService.Api",
       "projectPath": "C:\\IN6AM KINAL SPORTS\\KinalSports\\auth-service-dotnet\\src\\AuthService.Api\\AuthService.Api.csproj",
-      "packagesPath": "C:\\Users\\Informatica\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\xsbra\\.nuget\\packages\\",
       "outputPath": "C:\\IN6AM KINAL SPORTS\\KinalSports\\auth-service-dotnet\\src\\AuthService.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Informatica\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\xsbra\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

@@ -23,25 +23,49 @@ const processQueue = (error, token = null) => {
 
 const userClient = axios.create({
   baseURL: ENDPOINTS.USER,
+  timeout: 10000, // 10 segundos timeout
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
+console.log('[USER_CLIENT] Inicializado con baseURL:', ENDPOINTS.USER);
+
 userClient.interceptors.request.use(
   (config) => {
+    const fullUrl = `${config.baseURL || ENDPOINTS.USER}${config.url}`;
+    console.log('[USER_CLIENT] 🔵 Request:', config.method.toUpperCase(), fullUrl);
     const token = useAuthStore.getState().token;
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => {
+    console.error('[USER_CLIENT] ❌ Request Error:', error);
+    return Promise.reject(error);
+  }
 );
 
 userClient.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    console.log('[USER_CLIENT] ✅ Response:', response.config.method.toUpperCase(), response.config.url, response.status);
+    return response;
+  },
   async (error) => {
+    const fullUrl = error.config ? `${error.config.baseURL || ENDPOINTS.USER}${error.config.url}` : 'URL desconocida';
+    
+    console.error('[USER_CLIENT] ❌ Response Error:', {
+      message: error.message,
+      code: error.code,
+      status: error.response?.status,
+      url: fullUrl,
+      config: {
+        baseURL: error.config?.baseURL,
+        url: error.config?.url,
+      }
+    });
+
     const originalRequest = error.config;
 
     if (error.response?.status === 401 && !originalRequest._retry) {
@@ -70,10 +94,10 @@ userClient.interceptors.response.use(
           refreshToken,
         });
 
-        const { accessToken, user } = response.data;
+        const { accessToken, refreshToken: newRefreshToken } = response.data;
 
+        await SecureStore.setItemAsync(REFRESH_TOKEN_KEY, newRefreshToken);
         useAuthStore.getState().setAccessToken(accessToken);
-        useAuthStore.getState().updateUser(user);
 
         processQueue(null, accessToken);
         originalRequest.headers.Authorization = `Bearer ${accessToken}`;

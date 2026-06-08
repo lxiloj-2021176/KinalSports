@@ -23,20 +23,28 @@ const processQueue = (error, token = null) => {
 
 const authClient = axios.create({
   baseURL: ENDPOINTS.AUTH,
+  timeout: 10000, // 10 segundos timeout
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
+console.log('[AUTH_CLIENT] Inicializado con baseURL:', ENDPOINTS.AUTH);
+
 authClient.interceptors.request.use(
   (config) => {
+    const fullUrl = `${config.baseURL || ENDPOINTS.AUTH}${config.url}`;
+    console.log('[AUTH_CLIENT] 🔵 Request:', config.method.toUpperCase(), fullUrl);
     const token = useAuthStore.getState().token;
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => {
+    console.error('[AUTH_CLIENT] ❌ Request Error:', error);
+    return Promise.reject(error);
+  }
 );
 
 const noRefreshEndpoints = [
@@ -49,8 +57,24 @@ const noRefreshEndpoints = [
 ];
 
 authClient.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    console.log('[AUTH_CLIENT] ✅ Response:', response.config.method.toUpperCase(), response.config.url, response.status);
+    return response;
+  },
   async (error) => {
+    const fullUrl = error.config ? `${error.config.baseURL || ENDPOINTS.AUTH}${error.config.url}` : 'URL desconocida';
+    
+    console.error('[AUTH_CLIENT] ❌ Response Error:', {
+      message: error.message,
+      code: error.code,
+      status: error.response?.status,
+      url: fullUrl,
+      config: {
+        baseURL: error.config?.baseURL,
+        url: error.config?.url,
+      }
+    });
+
     const originalRequest = error.config;
 
     if (error.response?.status === 401 && !originalRequest._retry) {
@@ -87,10 +111,10 @@ authClient.interceptors.response.use(
           refreshToken,
         });
 
-        const { accessToken, user } = response.data;
+        const { accessToken, refreshToken: newRefreshToken } = response.data;
 
+        await SecureStore.setItemAsync(REFRESH_TOKEN_KEY, newRefreshToken);
         useAuthStore.getState().setAccessToken(accessToken);
-        useAuthStore.getState().updateUser(user);
 
         processQueue(null, accessToken);
         originalRequest.headers.Authorization = `Bearer ${accessToken}`;

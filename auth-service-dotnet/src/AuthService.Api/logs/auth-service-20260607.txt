@@ -1,0 +1,33 @@
+[2026-06-07 22:49:07 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-06-07 22:49:18 ERR] An error occurred while initializing the database {"SourceContext":"Program"}
+Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5435
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.UnpooledDataSource.Get(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreatedAsync(CancellationToken cancellationToken)
+   at Program.<Main>$(String[] args) in C:\IN6AM KINAL SPORTS\KinalSports\auth-service-dotnet\src\AuthService.Api\Program.cs:line 148
+[2026-06-07 22:53:29 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-06-07 22:53:30 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-06-07 22:53:30 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-06-07 22:53:30 INF] AuthService API is running at http://localhost:5001. Health endpoint: http://localhost:5001/health {"SourceContext":"Program"}
+[2026-06-07 23:45:45 INF] HTTP GET /health responded 200 in 124.9132 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNM544NQCMAD:00000001","ConnectionId":"0HNM544NQCMAD"}
+[2026-06-07 23:45:46 INF] HTTP GET /favicon.ico responded 404 in 1.8012 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNM544NQCMAD:00000002","ConnectionId":"0HNM544NQCMAD"}
+[2026-06-07 23:48:53 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-06-07 23:48:54 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-06-07 23:48:54 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-06-07 23:48:54 INF] AuthService API is running at http://0.0.0.0:5001. Health endpoint: http://0.0.0.0:5001/health {"SourceContext":"Program"}
+[2026-06-07 23:56:14 INF] HTTP GET /health responded 200 in 505.5226 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNM54AIR8H5H:00000001","ConnectionId":"0HNM54AIR8H5H"}

@@ -53,6 +53,8 @@ if (app.Environment.IsDevelopment())
 app.UseSerilogRequestLogging();
 
 // Add Security Headers using NetEscapades package
+// DISABLED FOR TESTING
+/*
 app.UseSecurityHeaders(policies => policies
     .AddDefaultSecurityHeaders()
     .RemoveServerHeader()
@@ -67,7 +69,7 @@ app.UseSecurityHeaders(policies => policies
         builder.AddStyleSrc().Self().UnsafeInline();
         builder.AddImgSrc().Self().Data();
         builder.AddFontSrc().Self().Data();
-        builder.AddConnectSrc().Self();
+        builder.AddConnectSrc().Self().UnsafeInline().From("http://192.168.1.14:*").From("http://192.168.1.26:*").From("exp://*");
         builder.AddFrameAncestors().None();
         builder.AddBaseUri().Self();
         builder.AddFormAction().Self();
@@ -75,6 +77,7 @@ app.UseSecurityHeaders(policies => policies
     .AddCustomHeader("Permissions-Policy", "geolocation=(), microphone=(), camera=()")
     .AddCustomHeader("Cache-Control", "no-store, no-cache, must-revalidate, private")
 );
+*/
 
 // Global exception handling
 app.UseMiddleware<GlobalExceptionMiddleware>();
@@ -82,17 +85,14 @@ app.UseMiddleware<GlobalExceptionMiddleware>();
 // Core middlewares
 // app.UseHttpsRedirection();
 app.UseCors("DefaultCorsPolicy");
-app.UseRateLimiter();
+// app.UseRateLimiter(); // DISABLED FOR TESTING
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
 // Health check endpoints - both versions for compatibility
-// Standard health check endpoint
-app.MapHealthChecks("/health");
-
-// Custom health endpoint to match Node.js response format
+// BEFORE any security middleware
 app.MapGet("/health", () =>
 {
     var response = new
@@ -101,8 +101,12 @@ app.MapGet("/health", () =>
         timestamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
     };
     return Results.Ok(response);
-});
+})
+.WithName("GetHealth")
+.WithOpenApi()
+.AllowAnonymous();
 
+app.MapHealthChecks("/health");
 app.MapHealthChecks("/api/v1/health");
 
 // Startup log: addresses and health endpoint

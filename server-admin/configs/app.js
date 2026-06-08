@@ -61,9 +61,9 @@ export const initServer = async () => {
 
     app.use(errorHandler);
 
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       console.log(`KinalSports Admin Server running on port ${PORT}`);
-      console.log(`Health check: http://localhost:${PORT}${BASE_PATH}/health`);
+      console.log(`Health check: http://0.0.0.0:${PORT}${BASE_PATH}/health`);
     });
   } catch (err) {
     console.error(`Error starting Admin Server: ${err.message}`);

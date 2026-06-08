@@ -13,9 +13,15 @@ const LoginScreen = ({ navigation }) => {
   const { control, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async (data) => {
+    console.log('[LoginScreen] onSubmit iniciado');
+    console.log('[LoginScreen] Datos form:', data);
     const result = await handleLogin(data);
+    console.log('[LoginScreen] Resultado login:', result);
     if (result.success) {
+      console.log('[LoginScreen] Login exitoso, navegando...');
       // Navigation will be handled by AppNavigator
+    } else {
+      console.log('[LoginScreen] Login fallido:', result.error);
     }
   };
 
