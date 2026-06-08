@@ -58,7 +58,30 @@ export const useAuth = () => {
     setError(null);
     try {
       console.log('[useAuth] Enviando registro...');
-      const response = await authClient.post('/register', userData);
+      
+      // Si hay una imagen, crear FormData
+      let registerData = userData;
+      if (userData.profilePicture) {
+        registerData = new FormData();
+        registerData.append('name', userData.name);
+        registerData.append('surname', userData.surname);
+        registerData.append('username', userData.username);
+        registerData.append('email', userData.email);
+        registerData.append('password', userData.password);
+        registerData.append('phone', userData.phone);
+        
+        // Convertir URI de imagen a blob
+        const imageUri = userData.profilePicture;
+        const response = await fetch(imageUri);
+        const blob = await response.blob();
+        registerData.append('profilePicture', blob, 'profile-pic.jpg');
+      }
+      
+      const response = await authClient.post('/register', registerData, {
+        headers: userData.profilePicture ? {
+          'Content-Type': 'multipart/form-data',
+        } : undefined,
+      });
       console.log('[useAuth] Registro exitoso:', response.data);
       return { success: true };
     } catch (err) {

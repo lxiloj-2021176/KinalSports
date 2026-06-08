@@ -1,8 +1,9 @@
 // client-user/src/features/teams/screens/CreateTeam.jsx
 
 import React, { useState } from 'react';
-import { View, StyleSheet, KeyboardAvoidingView, Platform, ScrollView, Alert, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, KeyboardAvoidingView, Platform, ScrollView, Alert, TouchableOpacity, Text, Image } from 'react-native';
 import { useForm } from 'react-hook-form';
+import * as ImagePicker from 'expo-image-picker';
 import { useTeams } from '../hooks/useTeams.js';
 import Input from '../../../shared/components/common/Input.jsx';
 import Button from '../../../shared/components/common/Button.jsx';
@@ -15,9 +16,29 @@ const CreateTeam = ({ navigation }) => {
   
   const { control, handleSubmit, formState: { errors } } = useForm();
 
-  const handlePickImage = () => {
-    // TODO: Implementar expo-image-picker cuando esté disponible
-    Alert.alert('Info', 'La selección de imagen estará disponible en la próxima versión');
+  const handlePickImage = async () => {
+    try {
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      
+      if (status !== 'granted') {
+        Alert.alert('Permiso Denegado', 'Se requiere permiso para acceder a la galería');
+        return;
+      }
+
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 0.8,
+      });
+
+      if (!result.canceled) {
+        setImageUri(result.assets[0].uri);
+      }
+    } catch (error) {
+      console.error('[CreateTeam] Error al seleccionar imagen:', error);
+      Alert.alert('Error', 'Error al seleccionar imagen');
+    }
   };
 
   const onSubmit = async (data) => {
@@ -58,10 +79,25 @@ const CreateTeam = ({ navigation }) => {
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <Card>
           <TouchableOpacity onPress={handlePickImage} style={styles.imagePicker}>
-            <Text style={styles.imagePickerText}>
-              {imageUri ? 'Imagen seleccionada' : 'Seleccionar foto del equipo'}
-            </Text>
+            {imageUri ? (
+              <Image 
+                source={{ uri: imageUri }} 
+                style={styles.selectedImage}
+                resizeMode="cover"
+              />
+            ) : (
+              <Text style={styles.imagePickerText}>📸 Seleccionar foto del equipo</Text>
+            )}
           </TouchableOpacity>
+          
+          {imageUri && (
+            <TouchableOpacity 
+              onPress={() => setImageUri(null)} 
+              style={styles.removeImageButton}
+            >
+              <Text style={styles.removeImageText}>Cambiar imagen</Text>
+            </TouchableOpacity>
+          )}
           
           <Input
             label="Nombre del Equipo"
@@ -77,6 +113,7 @@ const CreateTeam = ({ navigation }) => {
             control={control}
             placeholder="Descripción del equipo (opcional)"
             multiline
+            numberOfLines={4}
           />
 
           <Button
@@ -106,13 +143,35 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: SPACING.lg,
     alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: SPACING.md,
     backgroundColor: COLORS.surface,
+    minHeight: 200,
+  },
+  selectedImage: {
+    width: '100%',
+    height: 200,
+    borderRadius: 8,
+    resizeMode: 'cover',
   },
   imagePickerText: {
     fontSize: 14,
     color: COLORS.textLight,
     textAlign: 'center',
+  },
+  removeImageButton: {
+    paddingVertical: SPACING.sm,
+    paddingHorizontal: SPACING.md,
+    marginBottom: SPACING.md,
+    borderWidth: 1,
+    borderColor: COLORS.error,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  removeImageText: {
+    fontSize: 14,
+    color: COLORS.error,
+    fontWeight: '500',
   },
   button: {
     marginTop: SPACING.lg,

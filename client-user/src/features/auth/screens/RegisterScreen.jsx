@@ -1,8 +1,9 @@
 // client-user/src/features/auth/screens/RegisterScreen.jsx
 
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView, Alert } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView, Alert, Image } from 'react-native';
 import { useForm } from 'react-hook-form';
+import * as ImagePicker from 'expo-image-picker';
 import { useAuth } from '../hooks/useAuth.js';
 import Button from '../../../shared/components/common/Button.jsx';
 import Input from '../../../shared/components/common/Input.jsx';
@@ -10,9 +11,40 @@ import { COLORS, SPACING, FONT_SIZE } from '../../../shared/constants/theme.js';
 
 const RegisterScreen = ({ navigation }) => {
   const { handleRegister, loading, error } = useAuth();
+  const [profileImage, setProfileImage] = useState(null);
   const { control, handleSubmit, formState: { errors } } = useForm();
 
+  const handlePickImage = async () => {
+    try {
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      
+      if (status !== 'granted') {
+        Alert.alert('Permiso Denegado', 'Se requiere permiso para acceder a la galería');
+        return;
+      }
+
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 0.8,
+      });
+
+      if (!result.canceled) {
+        setProfileImage(result.assets[0].uri);
+      }
+    } catch (error) {
+      console.error('[RegisterScreen] Error al seleccionar imagen:', error);
+      Alert.alert('Error', 'Error al seleccionar imagen');
+    }
+  };
+
   const onSubmit = async (data) => {
+    // Agregar imagen si existe
+    if (profileImage) {
+      data.profilePicture = profileImage;
+    }
+    
     const result = await handleRegister(data);
     if (result.success) {
       Alert.alert(
@@ -37,6 +69,26 @@ const RegisterScreen = ({ navigation }) => {
         <View style={styles.content}>
           <Text style={styles.title}>Crear Cuenta</Text>
           <Text style={styles.subtitle}>Regístrate para comenzar</Text>
+
+          <TouchableOpacity onPress={handlePickImage} style={styles.profileImagePicker}>
+            {profileImage ? (
+              <Image 
+                source={{ uri: profileImage }} 
+                style={styles.profileImage}
+              />
+            ) : (
+              <Text style={styles.profileImageText}>📷 Agregar foto de perfil (opcional)</Text>
+            )}
+          </TouchableOpacity>
+
+          {profileImage && (
+            <TouchableOpacity 
+              onPress={() => setProfileImage(null)} 
+              style={styles.removeImageButton}
+            >
+              <Text style={styles.removeImageText}>Cambiar foto</Text>
+            </TouchableOpacity>
+          )}
 
           <Input
             label="Nombre"
@@ -147,6 +199,44 @@ const styles = StyleSheet.create({
     color: COLORS.textLight,
     marginBottom: SPACING.xl,
     textAlign: 'center',
+  },
+  profileImagePicker: {
+    borderWidth: 2,
+    borderColor: COLORS.border,
+    borderStyle: 'dashed',
+    borderRadius: 8,
+    padding: SPACING.lg,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: SPACING.md,
+    backgroundColor: COLORS.surface,
+    minHeight: 140,
+    overflow: 'hidden',
+  },
+  profileImage: {
+    width: 110,
+    height: 110,
+    borderRadius: 55,
+    backgroundColor: COLORS.background,
+  },
+  profileImageText: {
+    fontSize: FONT_SIZE.sm,
+    color: COLORS.textLight,
+    textAlign: 'center',
+  },
+  removeImageButton: {
+    paddingVertical: SPACING.sm,
+    paddingHorizontal: SPACING.md,
+    marginBottom: SPACING.md,
+    borderWidth: 1,
+    borderColor: COLORS.error,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  removeImageText: {
+    fontSize: FONT_SIZE.sm,
+    color: COLORS.error,
+    fontWeight: '500',
   },
   button: {
     width: '100%',

@@ -6573,7 +6573,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xsbra\\.nuget\\packages\\": {}
+    "C:\\Users\\Informatica\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -6581,11 +6581,11 @@
       "projectUniqueName": "C:\\IN6AM KINAL SPORTS\\KinalSports\\auth-service-dotnet\\src\\AuthService.Persistence\\AuthService.Persistence.csproj",
       "projectName": "AuthService.Persistence",
       "projectPath": "C:\\IN6AM KINAL SPORTS\\KinalSports\\auth-service-dotnet\\src\\AuthService.Persistence\\AuthService.Persistence.csproj",
-      "packagesPath": "C:\\Users\\xsbra\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Informatica\\.nuget\\packages\\",
       "outputPath": "C:\\IN6AM KINAL SPORTS\\KinalSports\\auth-service-dotnet\\src\\AuthService.Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\xsbra\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Informatica\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

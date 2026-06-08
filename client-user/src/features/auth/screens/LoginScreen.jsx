@@ -1,7 +1,7 @@
 // client-user/src/features/auth/screens/LoginScreen.jsx
 
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../hooks/useAuth.js';
 import Button from '../../../shared/components/common/Button.jsx';
@@ -32,6 +32,12 @@ const LoginScreen = ({ navigation }) => {
     >
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View style={styles.content}>
+          <Image
+            source={{ uri: 'https://res.cloudinary.com/dpdpiqtmu/image/upload/v1769785931/kinal_sports.png' }}
+            style={styles.logo}
+            resizeMode="contain"
+          />
+          
           <Text style={styles.title}>KinalSports</Text>
           <Text style={styles.subtitle}>Inicia sesión para continuar</Text>
 
@@ -86,6 +92,11 @@ const styles = StyleSheet.create({
   },
   content: {
     alignItems: 'center',
+  },
+  logo: {
+    width: 120,
+    height: 120,
+    marginBottom: SPACING.lg,
   },
   title: {
     fontSize: FONT_SIZE.xxl,

@@ -1,7 +1,7 @@
 // client-user/src/features/profile/screens/ProfileScreen.jsx
 
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, ScrollView, Text, Alert } from 'react-native';
+import { View, StyleSheet, ScrollView, Text, Alert, Image } from 'react-native';
 import { useForm } from 'react-hook-form';
 import { useProfile } from '../hooks/useProfile.js';
 import { useAuthStore } from '../../../shared/store/authStore.js';
@@ -93,7 +93,7 @@ const ProfileScreen = ({ navigation }) => {
         <Card>
           {getAvatarUri() && (
             <View style={styles.avatarContainer}>
-              <Text style={styles.avatarPlaceholder}>Avatar</Text>
+              <Image source={{ uri: getAvatarUri() }} style={styles.avatar} />
             </View>
           )}
           
@@ -201,9 +201,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: SPACING.lg,
   },
-  avatarPlaceholder: {
-    fontSize: FONT_SIZE.md,
-    color: COLORS.textLight,
+  avatar: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
   },
   title: {
     fontSize: FONT_SIZE.xl,
